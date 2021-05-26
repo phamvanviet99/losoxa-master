@@ -60,6 +60,9 @@ public class ProductController {
         mav.addObject("productRelates",productRelates);
         List<Category> listCategory = categoryService.getListProductCategory();
         mav.addObject("listCategory",listCategory);
+        if ( SecurityContextHolder.getContext().getAuthentication() != null && SecurityContextHolder.getContext().getAuthentication().isAuthenticated() && !(SecurityContextHolder.getContext().getAuthentication() instanceof AnonymousAuthenticationToken)){
+            mav.addObject("currentUserId", SecurityUtils.getPrinciple().getId());
+        }
         return mav;
     }
 

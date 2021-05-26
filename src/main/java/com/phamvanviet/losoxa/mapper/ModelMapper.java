@@ -1,13 +1,7 @@
 package com.phamvanviet.losoxa.mapper;
 
-import com.phamvanviet.losoxa.entity.Blog;
-import com.phamvanviet.losoxa.entity.Category;
-import com.phamvanviet.losoxa.entity.Permission;
-import com.phamvanviet.losoxa.entity.Province;
-import com.phamvanviet.losoxa.model.response.BlogResponse;
-import com.phamvanviet.losoxa.model.response.CategoryResponse;
-import com.phamvanviet.losoxa.model.response.PermissionResponse;
-import com.phamvanviet.losoxa.model.response.ProvinceResponse;
+import com.phamvanviet.losoxa.entity.*;
+import com.phamvanviet.losoxa.model.response.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.stereotype.Component;
@@ -24,4 +18,6 @@ public interface ModelMapper {
     BlogResponse blogToResponse(Blog blog);
 
     ProvinceResponse provinceToResponse(Province province);
+
+    RateResponse rateToResponse(Rate rate);
 }

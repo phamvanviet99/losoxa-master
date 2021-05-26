@@ -123,4 +123,13 @@ public class Converter {
         reportDTO.setPath(report.getPath());
         return reportDTO;
     }
+
+    public RateResponse rateToResponse(Rate rate) {
+        RateResponse rateResponse = new RateResponse();
+        BeanUtils.copyProperties(rate, rateResponse);
+        rateResponse.setUserName(rate.getUser().getUserName());
+        rateResponse.setContent(rate.getContent());
+        rateResponse.setStar(rate.getStar());
+        return rateResponse;
+    }
 }

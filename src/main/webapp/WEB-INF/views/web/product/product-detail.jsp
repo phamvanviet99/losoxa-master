@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Trang chủ</title>
     <%@ include file="/common/web/css.jsp" %>
+    <link href="<c:url value="/templates/web/css/rate.css"/>" rel="stylesheet" type="text/css">
 
 
 
@@ -145,6 +146,41 @@
 
                 </ul>
             </div>
+
+            <input type="hidden" value="${currentUserId}" id="userId" name="userId">
+            <%--rate--%>
+            <div class="row" style="padding-top: 20px;">
+            <div class="col-sm-5 col-md-6 col-12 pb-4">
+                <h2>Đánh giá và bình luận</h2>
+                <div class="comment mt-4 text-justify float-left">
+                    <div id="list-rate">
+
+                    </div>
+<%--                    <h4>Jhon Doe</h4>--%>
+<%--                    <div class="ratings">--%>
+<%--                        <i class="fa fa-star" aria-hidden="true"></i>--%>
+<%--                        <i class="fa fa-star" aria-hidden="true"></i>--%>
+<%--                        <i class="fa fa-star" aria-hidden="true"></i>--%>
+<%--                        <i class="fa fa-star" aria-hidden="true"></i>--%>
+<%--                        <i class="fa fa-star" aria-hidden="true"></i>--%>
+<%--                    </div>--%>
+<%--                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>--%>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+
+
+                    <div class="form-group">
+                        <h4>Đánh giá của bạn</h4>
+                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                        </div><label>Bình luận</label> <textarea name="msg" id="content" msg cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <button id="post" class="btn">Gửi</button>
+
+            </div>
+            </div>
+            <%--end rate--%>
         </div>
     </div>
 </div>
@@ -178,12 +214,19 @@
         location.href = location.origin + '/cart';
 
     }
+
+
+
+
 </script>
 
 <!-- Footer -->
 <%@ include file="/common/web/footer.jsp" %>
 <%@ include file="/common/web/js.jsp" %>
 <script src="<c:url value="/templates/web/js/addProduct.js"/>"></script>
+<script src="<c:url value="/templates/web/js/rate.js"/>"></script>
+
+
 
 </body>
 </html>
